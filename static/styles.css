@@ -37,20 +37,21 @@ body {
     transition: background-color 0.3s;
 }
 
-.upload-container button:hover {
-    background-color: #45a049;
-}
+.upload-container button:hover
+
+
+
 
 .image-container {
     width: 100%;
     display: flex;
     justify-content: space-between;
-    margin-top: 20px; /* 根据需要调整这个值来改变图像之间的垂直距离 */
+    margin-top: 20px;
 }
 
 .image-wrapper {
-    width: 40%; /* 使用百分比 */
-    margin: 0 5%; /* 微调边距以保持间距 */
+    width: 40%;
+    margin: 0 5%;
     display: inline-block;
     text-align: center;
 }
@@ -61,10 +62,4 @@ body {
     height: auto;
     border: 1px solid #ddd;
     margin-top: 10px;
-}
-
-h2 {
-    text-align: center;
-    margin: 10px 0;
-    display: none; /* 默认隐藏标题 */
 }
