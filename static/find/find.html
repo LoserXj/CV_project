@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Face Detection App</title>
+    <link rel="stylesheet" href="static/find/styles.css">
+</head>
+<body>
+    <button class="back-button" onclick="location.href='/';">Back</button>
+    <h1>Find Faces in Database</h1>
+    <div class="upload-container">
+        <input type="file" id="imageInput" accept="image/*">
+        <button onclick="uploadImageForDataBaseFind()">Upload and Find</button>
+    </div>
+    <div class="image-container">
+        <div class="image-wrapper">
+            <h2 id="originalTitle">Original Image</h2>
+            <img id="originalImage" src="" alt="Original Image" style="display:none;">
+        </div>
+        <div class="image-wrapper">
+            <h2 id="processedTitle">Found Face in Database</h2>
+            <img id="processedImage" src="" alt="Processed Image" style="display:none;">
+        </div>
+    </div>
+    <h2 id="verificationResult" class="result-container" style="display:none;">
+        <!-- verify函数的结果将被插入到这里 -->
+    </h2>
+
+    <script src="static/find/script.js"></script>
+</body>
+</html>

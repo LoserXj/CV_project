@@ -97,7 +97,7 @@ def animate():
     #     h = h * 3 // 4
     # w = to_32s(w)
     # h = to_32s(h)
-    if w > 1200 or h > 1200:
+    if w > 1600 or h > 1600:
         image = cv2.resize(image, (w // 2, h // 2), cv2.INTER_AREA)
     # image = cv2.resize(image, (w, h))
     transf = transforms.ToTensor()

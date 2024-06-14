@@ -68,3 +68,21 @@ h2 {
     margin: 10px 0;
     display: none; /* 默认隐藏标题 */
 }
+
+.back-button {
+    position: absolute; /* 绝对定位 */
+    top: 20px; /* 与顶部的距离 */
+    left: 20px; /* 与左侧的距离 */
+    padding: 10px 20px;
+    font-size: 16px;
+    cursor: pointer;
+    background-color: #4CAF50;
+    color: white;
+    border: none;
+    border-radius: 5px;
+    transition: background-color 0.3s;
+}
+
+.back-button:hover {
+    background-color: #45a049;
+}

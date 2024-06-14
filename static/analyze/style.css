@@ -52,8 +52,6 @@ body {
 .image-wrapper {
     width: 25vw; /* 占屏幕宽度的四分之一 */
     margin: 0 auto; /* 居中显示 */
-    border: 1px solid #ddd;
-    background-color: #f9f9f9;
     text-align: center;
 }
 
@@ -67,23 +65,28 @@ body {
     width: 100%; /* 与图片框宽度相同 */
     max-width: 800px; /* 限制最大宽度 */
     margin-top: 20px; /* 与图片框底部保持一定距离 */
-    border: 1px solid #ddd;
-    background-color: #f9f9f9;
     padding: 20px;
-    text-align: left;
+    text-align: center;
 }
 
 .analysis-results h3 {
     margin-top: 0;
 }
 
-/* 响应式设计 */
-@media (max-width: 768px) {
-    .image-wrapper {
-        width: 50vw; /* 在小屏幕上增加宽度 */
-    }
-    .analysis-results {
-        margin-left: 10px;
-        margin-right: 10px;
-    }
+.back-button {
+    position: absolute; /* 绝对定位 */
+    top: 20px; /* 与顶部的距离 */
+    left: 20px; /* 与左侧的距离 */
+    padding: 10px 20px;
+    font-size: 16px;
+    cursor: pointer;
+    background-color: #4CAF50;
+    color: white;
+    border: none;
+    border-radius: 5px;
+    transition: background-color 0.3s;
+}
+
+.back-button:hover {
+    background-color: #45a049;
 }

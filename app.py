@@ -6,14 +6,17 @@ import numpy as np
 
 from extract_faces import extract_faces
 from verify import verify
-from animegan2.test import animate
+from find import find
 from analyze import analyze_face
+from animegan2.test import animate
 
 app = Flask(__name__)
 app.config['UPLOAD_FOLDER'] = 'uploads/'
+app.config['db_folder'] = 'my_db/'
 app.config['animate_folder'] = 'animation/'
 # 确保上传文件夹存在
 os.makedirs(app.config['UPLOAD_FOLDER'], exist_ok=True)
+os.makedirs(app.config['db_folder'], exist_ok=True)
 os.makedirs(app.config['animate_folder'], exist_ok=True)
 
 @app.route('/')
@@ -27,6 +30,10 @@ def jump_to_verify():
 @app.route('/extract_faces')
 def jump_to_extract_faces():
     return send_from_directory('static/extract_faces', 'extract_faces.html')
+
+@app.route('/find')
+def jump_to_find():
+    return send_from_directory('static/find', 'find.html')
 
 @app.route('/analyze')
 def jump_to_analyze():
@@ -44,10 +51,14 @@ def function_extract_faces():
 def function_verify():
     return verify()
 
+@app.route('/find', methods=['POST'])
+def function_find():
+    return find()
+
 @app.route('/analyze', methods=['POST'])
 def function_analyze():
     return analyze_face()
-    
+
 @app.route('/animate', methods=['POST'])
 def function_animate():
     return animate()

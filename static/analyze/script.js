@@ -51,3 +51,4 @@ function displayAnalysisResults(results) {
     `;
     resultsContainer.innerHTML = resultsHtml;
 }
+
