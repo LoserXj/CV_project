@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Results</title>
+    <link rel="stylesheet" type="text/css" href="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/4.5.2/css/bootstrap.min.css">
+    <style>
+        .data {
+            width: 100%;
+            margin: 0 auto;
+        }
+    </style>
+</head>
+<body>
+    <h1>Results</h1>
+    <div>
+        {% for table in tables %}
+            {{ table|safe }}
+        {% endfor %}
+    </div>
+    <a href="/">Go Back</a>
+</body>
+</html>
