@@ -29,11 +29,9 @@ def extract_faces():
     image_array = np.asarray(bytearray(image), dtype=np.uint8())
     frame = cv2.imdecode(image_array, cv2.IMREAD_COLOR)
     # 检测人脸并绘制矩形框
-    detected_image_rgb = detect_faces(frame)
-    # detected_image_rgb = cv2.cvtColor(detected_image, cv2.COLOR_BGR2RGB)
-    # resized_image = cv2.resize(detected_image_rgb, (400, int(detected_image_rgb.shape[0] * 400 / detected_image_rgb.shape[1])), interpolation=cv2.INTER_AREA)
+    detected_image = detect_faces(frame)
     # 将处理后的图像转换为内存文件对象，以便发送
-    _, buffer = cv2.imencode('.jpg', detected_image_rgb)
+    _, buffer = cv2.imencode('.jpg', detected_image)
     # 使用make_response创建响应
     response = make_response(buffer.tobytes())
     # 设置MIME类型

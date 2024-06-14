@@ -83,7 +83,8 @@ def animate():
         torch.load("animegan2/weights/face_paint_512_v2.pt", map_location="cpu")
     )
     net.to(device).eval()
-    image = request.files['image'].read()
+    filename = request.files["image"].filename
+    image = request.files["image"].read()
     image_array = np.asarray(bytearray(image), dtype=np.uint8())
     image = cv2.imdecode(image_array, cv2.IMREAD_COLOR)
     h = image.shape[0]
@@ -96,6 +97,8 @@ def animate():
     #     h = h * 3 // 4
     # w = to_32s(w)
     # h = to_32s(h)
+    if w > 1200 or h > 1200:
+        image = cv2.resize(image, (w // 2, h // 2), cv2.INTER_AREA)
     # image = cv2.resize(image, (w, h))
     transf = transforms.ToTensor()
     img_tensor = transf(image)
@@ -108,7 +111,7 @@ def animate():
         array1 = array1 * 255 / maxValue
         mat = np.uint8(array1)
         mat = mat.transpose(1, 2, 0)
-        # mat = cv2.cvtColor(mat, cv2.COLOR_RGB2BGR)
+        cv2.imwrite("./animation/" + filename, mat)
         _, buffer = cv2.imencode(".jpg", mat)
         # 使用make_response创建响应
         response = make_response(buffer.tobytes())

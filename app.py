@@ -10,9 +10,10 @@ from animegan2.test import animate
 
 app = Flask(__name__)
 app.config['UPLOAD_FOLDER'] = 'uploads/'
-
+app.config['animate_folder'] = 'animation/'
 # 确保上传文件夹存在
 os.makedirs(app.config['UPLOAD_FOLDER'], exist_ok=True)
+os.makedirs(app.config['animate_folder'], exist_ok=True)
 
 @app.route('/')
 def jump_to_start():
