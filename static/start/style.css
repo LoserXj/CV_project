@@ -1,0 +1,44 @@
+body, html {
+    height: 100%;
+    margin: 0;
+    font-family: Arial, sans-serif;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    /* background-color: #f7f7f7; */
+}
+
+.title {
+    font-size: 2.5em;
+    /* color: #333; */
+    margin-bottom: 20px;
+    text-align: center;
+}
+
+.button-container {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    margin-top: 30px; /* 标题与按钮之间的间距 */
+}
+
+.styled-button {
+    padding: 10px 20px;
+    font-size: 16px;
+    margin: 10px 0;
+    cursor: pointer;
+    background-color: #4CAF50;
+    color: white;
+    border: none;
+    border-radius: 5px;
+    transition: background-color 0.3s, transform 0.1s ease;
+}
+
+.styled-button:hover {
+    background-color: #45a049;
+    transform: scale(1.05);
+}
+
+.styled-button:active {
+    transform: scale(0.98);
+}

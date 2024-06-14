@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Image Verification App</title>
+    <link rel="stylesheet" href="static/verify/styles.css">
+</head>
+<body>
+    <h1>Upload Two Images for Verification</h1>
+    <div class="upload-container">
+        <input type="file" id="imageInput1" accept="image/*">
+        <input type="file" id="imageInput2" accept="image/*">
+        <button onclick="uploadImagesForVerification()">Upload and Verify</button>
+    </div>
+    <div class="image-container">
+        <div class="image-wrapper">
+            <h2 id="originalTitle1" style="display:none;">Image 1</h2>
+            <img id="originalImage1" src="" alt="Image 1" style="display:none;">
+        </div><div class="image-wrapper">
+            <h2 id="originalTitle2" style="display:none;">Image 2</h2>
+            <img id="originalImage2" src="" alt="Image 2" style="display:none;">
+        </div>
+    </div>
+    <h2 id="verificationResult" class="result-container" style="display:none;">
+        <!-- verify函数的结果将被插入到这里 -->
+    </h2>
+
+    <script src="static/verify/script.js"></script>
+</body>
+</html>

@@ -1,0 +1,70 @@
+body {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.upload-container {
+    display: flex;
+    align-items: center;
+    margin-top: 20px;
+}
+
+.upload-container input[type="file"] {
+    margin-right: 10px;
+    padding: 10px;
+    font-size: 16px;
+    cursor: pointer;
+    background-color: #f8f8f8;
+    color: #333;
+    border: 1px solid #ddd;
+    border-radius: 5px;
+    transition: background-color 0.3s;
+}
+
+.upload-container input[type="file"]:hover {
+    background-color: #eaeaea;
+}
+
+.upload-container button {
+    padding: 10px 20px;
+    font-size: 16px;
+    cursor: pointer;
+    background-color: #4CAF50;
+    color: white;
+    border: none;
+    border-radius: 5px;
+    transition: background-color 0.3s;
+}
+
+.upload-container button:hover {
+    background-color: #45a049;
+}
+
+.image-container {
+    width: 100%;
+    display: flex;
+    justify-content: space-between;
+    margin-top: 20px; /* 根据需要调整这个值来改变图像之间的垂直距离 */
+}
+
+.image-wrapper {
+    width: 40%; /* 使用百分比 */
+    margin: 0 5%; /* 微调边距以保持间距 */
+    display: inline-block;
+    text-align: center;
+}
+
+
+.image-wrapper img {
+    width: 100%;
+    height: auto;
+    border: 1px solid #ddd;
+    margin-top: 10px;
+}
+
+h2 {
+    text-align: center;
+    margin: 10px 0;
+    display: none; /* 默认隐藏标题 */
+}

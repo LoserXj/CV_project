@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Face Detection App</title>
+    <link rel="stylesheet" href="static/extract_faces/styles.css">
+</head>
+<body>
+    <h1>Face Detection and Extraction</h1>
+    <div class="upload-container">
+        <input type="file" id="imageInput" accept="image/*">
+        <button onclick="uploadImageForFaceExtraction()">Upload and Process</button>
+    </div>
+    <div class="image-container">
+        <div class="image-wrapper">
+            <h2 id="originalTitle">Original Image</h2>
+            <img id="originalImage" src="" alt="Original Image" style="display:none;">
+        </div>
+        <div class="image-wrapper">
+            <h2 id="processedTitle">Processed Image</h2>
+            <img id="processedImage" src="" alt="Processed Image" style="display:none;">
+        </div>
+    </div>
+
+    <script src="static/extract_faces/script.js"></script>
+</body>
+</html>
