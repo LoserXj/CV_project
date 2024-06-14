@@ -1,0 +1,41 @@
+<!-- templates/index.html -->
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>DeepFace Find</title>
+</head>
+<body>
+    <h1>DeepFace Find</h1>
+    <form action="/find" method="post" enctype="multipart/form-data">
+        <label for="target_image">Target Image:</label>
+        <input type="file" name="target_image" id="target_image" required><br><br>
+        <label for="database_image">Database Image:</label>
+        <input type="file" name="database_image" id="database_image" required><br><br>
+        <input type="submit" value="Find">
+    </form>
+    <div id="result"></div>
+
+    <script>
+        document.querySelector('form').addEventListener('submit', async function(event) {
+            event.preventDefault();
+
+            const formData = new FormData(this);
+
+            const response = await fetch('/find', {
+                method: 'POST',
+                body: formData
+            });
+
+            if (response.ok) {
+                const result = await response.json();
+                document.getElementById('result').textContent = JSON.stringify(result, null, 2);
+            } else {
+                const error = await response.text();
+                document.getElementById('result').textContent = 'Error: ' + error;
+            }
+        });
+    </script>
+</body>
+</html>
