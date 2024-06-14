@@ -1,0 +1,89 @@
+body {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.upload-container {
+    display: flex;
+    align-items: center;
+    margin-top: 20px;
+}
+
+.upload-container input[type="file"],
+.upload-container button {
+    margin: 0 5px;
+    padding: 10px 20px;
+    font-size: 16px;
+    cursor: pointer;
+    border-radius: 5px;
+    transition: background-color 0.3s;
+}
+
+.upload-container input[type="file"] {
+    background-color: #f8f8f8;
+    color: #333;
+    border: 1px solid #ddd;
+}
+
+.upload-container input[type="file"]:hover {
+    background-color: #eaeaea;
+}
+
+.upload-container button {
+    background-color: #4CAF50;
+    color: white;
+    border: none;
+}
+
+.upload-container button:hover {
+    background-color: #45a049;
+}
+
+.result-container {
+    width: 100%;
+    max-width: 800px;
+    margin-top: 20px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.image-wrapper {
+    width: 25vw; /* 占屏幕宽度的四分之一 */
+    margin: 0 auto; /* 居中显示 */
+    border: 1px solid #ddd;
+    background-color: #f9f9f9;
+    text-align: center;
+}
+
+.image-wrapper img {
+    max-width: 100%;
+    height: auto;
+    margin-top: 10px;
+}
+
+.analysis-results {
+    width: 100%; /* 与图片框宽度相同 */
+    max-width: 800px; /* 限制最大宽度 */
+    margin-top: 20px; /* 与图片框底部保持一定距离 */
+    border: 1px solid #ddd;
+    background-color: #f9f9f9;
+    padding: 20px;
+    text-align: left;
+}
+
+.analysis-results h3 {
+    margin-top: 0;
+}
+
+/* 响应式设计 */
+@media (max-width: 768px) {
+    .image-wrapper {
+        width: 50vw; /* 在小屏幕上增加宽度 */
+    }
+    .analysis-results {
+        margin-left: 10px;
+        margin-right: 10px;
+    }
+}

@@ -7,6 +7,7 @@ import numpy as np
 from extract_faces import extract_faces
 from verify import verify
 from animegan2.test import animate
+from analyze import analyze_face
 
 app = Flask(__name__)
 app.config['UPLOAD_FOLDER'] = 'uploads/'
@@ -27,6 +28,10 @@ def jump_to_verify():
 def jump_to_extract_faces():
     return send_from_directory('static/extract_faces', 'extract_faces.html')
 
+@app.route('/analyze')
+def jump_to_analyze():
+    return send_from_directory('static/analyze', 'analyze.html')
+
 @app.route('/animate')
 def jump_to_animate():
     return send_from_directory('static/animate', 'animate.html')
@@ -39,6 +44,10 @@ def function_extract_faces():
 def function_verify():
     return verify()
 
+@app.route('/analyze', methods=['POST'])
+def function_analyze():
+    return analyze_face()
+    
 @app.route('/animate', methods=['POST'])
 def function_animate():
     return animate()
