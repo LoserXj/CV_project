@@ -6,6 +6,10 @@ This is a Final project of 2024 spring CS308(Computer Vision) course. Our projec
 ## Environment
 You can run the following command to import the required environment by pip:
 ```
+cd deepface
+pip install -e .
+cd ..
+cd animegan2
 pip install -r requirements.txt
 ```
 
